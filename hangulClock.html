@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
+    <script type="text/javascript">
+      var date = new Date();
+
+      setInterval(function () {
+        var date = new Date();
+
+        var time = {
+          hour : date.getHours(),
+          min : date.getMinutes()
+        };
+
+        var h = time.hour;
+        var m1 = parseInt(time.min/10);//분 십의 자리
+        var m2 = time.min%10;//분 일의 자리
+
+        if (h>12) {
+          h-=12;
+        }
+
+        switch (h) { //시간
+          case 0:
+            h = ".자, ";
+            break;
+          case 1:
+            h = ".한, ";
+            break;
+          case 2:
+            h = ".두, ";
+            break;
+          case 3:
+            h = ".세, ";
+            break;
+          case 4:
+            h = ".네, ";
+            break;
+          case 5:
+            h = ".다, .섯, ";
+            break;
+          case 6:
+            h = ".여1, .섯, ";
+            break;
+          case 7:
+            h = ".일1, .곱, ";
+            break;
+          case 8:
+            h = ".여1, .덟, ";
+            break;
+          case 9:
+            h = ".아, .홉, ";
+            break;
+          case 10:
+            h = ".열, ";
+            break;
+          case 11:
+            h = ".열, .한, ";
+            break;
+          case 12:
+            h = ".열, .두, ";
+            break;
+          default:
+            h="";
+
+
+        }
+
+        switch (m1) {//분 십의 자리
+          case 1:
+            m1=".십, ";
+            break;
+          case 2:
+            m1=".이1,.십, ";
+            break;
+          case 3:
+            m1=".삼1,.십, ";
+            break;
+          case 4:
+            m1=".사1,.십, ";
+            break;
+          case 5:
+            m1=".오2,.십, ";
+            break;
+          default:
+            m1="";
+        }
+        switch (m2) { //분 일의 자리
+
+          case 1:
+          m2=".일2";
+          break;
+          case 2:
+          m2=".이2";
+          break;
+          case 3:
+          m2=".삼2";
+          break;
+          case 4:
+          m2=".사2";
+          break;
+          case 5:
+          m2=".오3";
+          break;
+          case 6:
+          m2=".육";
+          break;
+
+          case 7:
+          m2=".칠";
+          break;
+
+          case 8:
+          m2=".팔";
+          break;
+
+          case 9:
+          m2=".구";
+          break;
+          default:
+        }
+
+
+        $("td:not("+h+m1+m2+", .시, .분, .오1"+")").css("color","#46515c");
+        //
+        $(h+m1+m2+", .시, .분, .오1").css("color","wheat");
+
+        var h = time.hour;
+
+
+
+        if (m1=="" && m2=="") {
+          $(".정, .각").css("color","wheat");
+          $(".분").css("color","#46515c");
+        }
+
+        if (h==0) {
+          $(".시, .자").css("color","#46515c");
+        }
+
+        if (h<12) {
+          $(".전").css("color","wheat");
+        }
+        else{
+          $(".후").css("color","wheat");
+        }
+
+        if (h==0 && m1=="" && m2=="") {
+          $(".자, .정").css("color","wheat");
+          $("td:not(.자, .정)").css("color","#46515c");
+        }
+        // $().css("color","wheat");
+
+        // document.write("td:not("+h+m1+m2+", .시, .분, .초, .오1"+")"+"<br>");
+
+      },200);
+
+
+
+
+
+
+    </script>
+
+    <style media="screen">
+      table{
+        background-color: #113b61;
+        width: 500px;
+        height: 500px;
+      }
+      td{
+        text-align: center;
+        font-size: 50px;
+        color: #46515c;
+      }
+    </style>
+
+
+    <table >
+      <tr>
+        <td class="오1">오</td>
+        <td class="전">전</td>
+        <td class="후">후</td>
+        <td class="열">열</td>
+        <td class="한">한</td>
+        <td class="두">두</td>
+      </tr>
+
+      <tr>
+        <td class="세">세</td>
+        <td class="네">네</td>
+        <td class="다">다</td>
+        <td class="여1">여</td>
+        <td class="섯">섯</td>
+        <td class="일1">일</td>
+      </tr>
+
+      <tr>
+        <td class="곱">곱</td>
+        <td class="여2">여</td>
+        <td class="덟">덟</td>
+        <td class="아">아</td>
+        <td class="홉">홉</td>
+        <td class="시">시</td>
+      </tr>
+<!-- =======================  시  ================= -->
+      <tr>
+        <td class="자">자</td>
+        <td class="이1">이</td>
+        <td class="삼1">삼</td>
+        <td class="사1">사</td>
+        <td class="오2">오</td>
+        <td class="십">십</td>
+      </tr>
+
+      <tr>
+        <td class="정">정</td>
+        <td class="각">각</td>
+        <td class="일2">일</td>
+        <td class="이2">이</td>
+        <td class="삼2">삼</td>
+        <td class="사2">사</td>
+      </tr>
+
+      <tr>
+        <td class="오3">오</td>
+        <td class="육">육</td>
+        <td class="칠">칠</td>
+        <td class="팔">팔</td>
+        <td class="구">구</td>
+        <td class="분">분</td>
+      </tr>
+    </table>
+  </body>
+</html>
