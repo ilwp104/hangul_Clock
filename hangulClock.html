@@ -67,8 +67,6 @@
             break;
           default:
             h="";
-
-
         }
 
         switch (m1) {//분 십의 자리
@@ -126,7 +124,7 @@
         }
 
 
-        $("td:not("+h+m1+m2+", .시, .분, .오1"+")").css("color","#46515c");
+        $("td:not("+h+m1+m2+", .시, .분, .오1"+")").css("color","#49515b");
         //
         $(h+m1+m2+", .시, .분, .오1").css("color","wheat");
 
@@ -136,11 +134,11 @@
 
         if (m1=="" && m2=="") {
           $(".정, .각").css("color","wheat");
-          $(".분").css("color","#46515c");
+          $(".분").css("color","#49515b");
         }
 
         if (h==0) {
-          $(".시, .자").css("color","#46515c");
+          $(".시, .자").css("color","#49515b");
         }
 
         if (h<12) {
@@ -152,89 +150,106 @@
 
         if (h==0 && m1=="" && m2=="") {
           $(".자, .정").css("color","wheat");
-          $("td:not(.자, .정)").css("color","#46515c");
+          $("td:not(.자, .정)").css("color","#49515b");
         }
-        // $().css("color","wheat");
-
-        // document.write("td:not("+h+m1+m2+", .시, .분, .초, .오1"+")"+"<br>");
-
       },200);
-
-
-
-
-
-
     </script>
-
     <style media="screen">
       table{
-        background-color: #113b61;
         width: 500px;
         height: 500px;
+        position: absolute;
+        margin-left: calc(50vw - 250px);
+        margin-top: calc(50vh - 250px);
+        z-index: 999;
+        top: 0;
       }
       td{
         text-align: center;
         font-size: 50px;
-        color: #46515c;
+        color: #49515b;
+      }
+      .wrap_table{
+        background-image: url("./img/people.jpg");
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size:cover;
+        width: 100vw;
+        height: 100vh;
+        z-index: 0;
+        position: relative;
+      }
+      .black{
+        width: 100vw;
+        height: 100vh;
+        background-color: rgba(0,0,0,.5);
+        position: absolute;
+        z-index: 2;
+        top: 0;
+      }
+      body{
+        margin: 0;
       }
     </style>
 
+  <div class="wrap_table"></div>
+  <div class="black"></div>
 
-    <table >
-      <tr>
-        <td class="오1">오</td>
-        <td class="전">전</td>
-        <td class="후">후</td>
-        <td class="열">열</td>
-        <td class="한">한</td>
-        <td class="두">두</td>
-      </tr>
+  <table >
+    <tr>
+      <td class="오1">오</td>
+      <td class="전">전</td>
+      <td class="후">후</td>
+      <td class="열">열</td>
+      <td class="한">한</td>
+      <td class="두">두</td>
+    </tr>
 
-      <tr>
-        <td class="세">세</td>
-        <td class="네">네</td>
-        <td class="다">다</td>
-        <td class="여1">여</td>
-        <td class="섯">섯</td>
-        <td class="일1">일</td>
-      </tr>
+    <tr>
+      <td class="세">세</td>
+      <td class="네">네</td>
+      <td class="다">다</td>
+      <td class="여1">여</td>
+      <td class="섯">섯</td>
+      <td class="일1">일</td>
+    </tr>
 
-      <tr>
-        <td class="곱">곱</td>
-        <td class="여2">여</td>
-        <td class="덟">덟</td>
-        <td class="아">아</td>
-        <td class="홉">홉</td>
-        <td class="시">시</td>
-      </tr>
-<!-- =======================  시  ================= -->
-      <tr>
-        <td class="자">자</td>
-        <td class="이1">이</td>
-        <td class="삼1">삼</td>
-        <td class="사1">사</td>
-        <td class="오2">오</td>
-        <td class="십">십</td>
-      </tr>
+    <tr>
+      <td class="곱">곱</td>
+      <td class="여2">여</td>
+      <td class="덟">덟</td>
+      <td class="아">아</td>
+      <td class="홉">홉</td>
+      <td class="시">시</td>
+    </tr>
+    <!-- =======================  시  ================= -->
+    <tr>
+      <td class="자">자</td>
+      <td class="이1">이</td>
+      <td class="삼1">삼</td>
+      <td class="사1">사</td>
+      <td class="오2">오</td>
+      <td class="십">십</td>
+    </tr>
 
-      <tr>
-        <td class="정">정</td>
-        <td class="각">각</td>
-        <td class="일2">일</td>
-        <td class="이2">이</td>
-        <td class="삼2">삼</td>
-        <td class="사2">사</td>
-      </tr>
+    <tr>
+      <td class="정">정</td>
+      <td class="각">각</td>
+      <td class="일2">일</td>
+      <td class="이2">이</td>
+      <td class="삼2">삼</td>
+      <td class="사2">사</td>
+    </tr>
 
-      <tr>
-        <td class="오3">오</td>
-        <td class="육">육</td>
-        <td class="칠">칠</td>
-        <td class="팔">팔</td>
-        <td class="구">구</td>
-        <td class="분">분</td>
-      </tr>
-    </table>
+    <tr>
+      <td class="오3">오</td>
+      <td class="육">육</td>
+      <td class="칠">칠</td>
+      <td class="팔">팔</td>
+      <td class="구">구</td>
+      <td class="분">분</td>
+    </tr>
+  </table>
+
   </body>
 </html>
